@@ -40,7 +40,7 @@ resource "snowflake_file_format" "example_file_format" {
   skip_header     = 1
 }*/
   resource "null_resource" "execute_script" {
-  depends_on = [snowflake_task.execute_task]
+  #depends_on = [snowflake_task.execute_task]
   provisioner "local-exec" {
     command = "python3 script.py"
   }
